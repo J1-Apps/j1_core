@@ -207,37 +207,38 @@ class _J1ColorSchemeCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, J1Color
     int? surface,
     int? onSurface,
     int? background,
-  }) => $apply(
-    FieldCopyWithData({
-      if (brightness != null) #brightness: brightness,
-      if (primary != null) #primary: primary,
-      if (onPrimary != null) #onPrimary: onPrimary,
-      if (secondary != null) #secondary: secondary,
-      if (onSecondary != null) #onSecondary: onSecondary,
-      if (tertiary != null) #tertiary: tertiary,
-      if (onTertiary != null) #onTertiary: onTertiary,
-      if (error != null) #error: error,
-      if (onError != null) #onError: onError,
-      if (surface != null) #surface: surface,
-      if (onSurface != null) #onSurface: onSurface,
-      if (background != null) #background: background,
-    }),
-  );
+  }) =>
+      $apply(
+        FieldCopyWithData({
+          if (brightness != null) #brightness: brightness,
+          if (primary != null) #primary: primary,
+          if (onPrimary != null) #onPrimary: onPrimary,
+          if (secondary != null) #secondary: secondary,
+          if (onSecondary != null) #onSecondary: onSecondary,
+          if (tertiary != null) #tertiary: tertiary,
+          if (onTertiary != null) #onTertiary: onTertiary,
+          if (error != null) #error: error,
+          if (onError != null) #onError: onError,
+          if (surface != null) #surface: surface,
+          if (onSurface != null) #onSurface: onSurface,
+          if (background != null) #background: background,
+        }),
+      );
   @override
   J1ColorScheme $make(CopyWithData data) => J1ColorScheme(
-    brightness: data.get(#brightness, or: $value.brightness),
-    primary: data.get(#primary, or: $value.primary),
-    onPrimary: data.get(#onPrimary, or: $value.onPrimary),
-    secondary: data.get(#secondary, or: $value.secondary),
-    onSecondary: data.get(#onSecondary, or: $value.onSecondary),
-    tertiary: data.get(#tertiary, or: $value.tertiary),
-    onTertiary: data.get(#onTertiary, or: $value.onTertiary),
-    error: data.get(#error, or: $value.error),
-    onError: data.get(#onError, or: $value.onError),
-    surface: data.get(#surface, or: $value.surface),
-    onSurface: data.get(#onSurface, or: $value.onSurface),
-    background: data.get(#background, or: $value.background),
-  );
+        brightness: data.get(#brightness, or: $value.brightness),
+        primary: data.get(#primary, or: $value.primary),
+        onPrimary: data.get(#onPrimary, or: $value.onPrimary),
+        secondary: data.get(#secondary, or: $value.secondary),
+        onSecondary: data.get(#onSecondary, or: $value.onSecondary),
+        tertiary: data.get(#tertiary, or: $value.tertiary),
+        onTertiary: data.get(#onTertiary, or: $value.onTertiary),
+        error: data.get(#error, or: $value.error),
+        onError: data.get(#onError, or: $value.onError),
+        surface: data.get(#surface, or: $value.surface),
+        onSurface: data.get(#onSurface, or: $value.onSurface),
+        background: data.get(#background, or: $value.background),
+      );
 
   @override
   J1ColorSchemeCopyWith<$R2, J1ColorScheme, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>

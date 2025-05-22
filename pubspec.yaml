@@ -15,3 +15,5 @@ workspace:
 
 flutter:
   uses-material-design: true
+dev_dependencies:
+  melos: ^6.3.2

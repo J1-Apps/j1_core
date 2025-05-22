@@ -37,8 +37,7 @@ class JDialog extends StatelessWidget {
     return Dialog(
       backgroundColor: overrides?.backgroundColor ?? theme.colorScheme.surfaceContainer,
       elevation: overrides?.elevation ?? JDimens.elevation_m,
-      insetPadding:
-          overrides?.insetPadding ??
+      insetPadding: overrides?.insetPadding ??
           const EdgeInsets.symmetric(horizontal: JDimens.spacing_m, vertical: JDimens.spacing_xxxl),
       shape: RoundedRectangleBorder(
         side: BorderSide(

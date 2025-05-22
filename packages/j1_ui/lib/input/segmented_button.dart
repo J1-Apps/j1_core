@@ -32,17 +32,17 @@ class JSegmentedButtonOverrides extends Equatable {
 
   @override
   List<Object?> get props => [
-    expandedPadding,
-    buttonPadding,
-    cornerRadius,
-    iconSize,
-    foregroundColor,
-    backgroundColor,
-    overlayColor,
-    outlineColor,
-    outlineWidth,
-    textStyle,
-  ];
+        expandedPadding,
+        buttonPadding,
+        cornerRadius,
+        iconSize,
+        foregroundColor,
+        backgroundColor,
+        overlayColor,
+        outlineColor,
+        outlineWidth,
+        textStyle,
+      ];
 }
 
 class JSegmentedButton extends StatelessWidget {
@@ -127,20 +127,20 @@ extension _CreateStyle on JSegmentedButton {
   (EdgeInsets, double, TextStyle?) _createButtonParams(TextTheme fonts) {
     return switch (size) {
       JWidgetSize.large => (
-        const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s),
-        28,
-        fonts.titleLarge,
-      ),
+          const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s),
+          28,
+          fonts.titleLarge,
+        ),
       JWidgetSize.medium => (
-        const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s),
-        24,
-        fonts.titleMedium,
-      ),
+          const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s),
+          24,
+          fonts.titleMedium,
+        ),
       JWidgetSize.small => (
-        const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s),
-        20,
-        fonts.titleSmall,
-      ),
+          const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s),
+          20,
+          fonts.titleSmall,
+        ),
     };
   }
 

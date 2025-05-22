@@ -54,26 +54,26 @@ class JDropdownMenuOverrides extends Equatable {
 
   @override
   List<Object?> get props => [
-    width,
-    menuHeight,
-    menuPadding,
-    elevation,
-    alignment,
-    cornerRadius,
-    iconSize,
-    iconButtonSize,
-    strokeWidth,
-    menuStrokeWidth,
-    errorColor,
-    foregroundColor,
-    backgroundColor,
-    menuStrokeColor,
-    iconColor,
-    hintOpacity,
-    disabledOpacity,
-    textStyle,
-    hintStyle,
-  ];
+        width,
+        menuHeight,
+        menuPadding,
+        elevation,
+        alignment,
+        cornerRadius,
+        iconSize,
+        iconButtonSize,
+        strokeWidth,
+        menuStrokeWidth,
+        errorColor,
+        foregroundColor,
+        backgroundColor,
+        menuStrokeColor,
+        iconColor,
+        hintOpacity,
+        disabledOpacity,
+        textStyle,
+        hintStyle,
+      ];
 }
 
 class JDropdownMenuEntryOverrides extends Equatable {
@@ -198,9 +198,9 @@ class JDropdownMenu<T> extends StatelessWidget {
       filterCallback: filter == null
           ? null
           : (entries, query) => filter(
-              entries.map(_revertEntry<T>).toList(),
-              query,
-            ).map((entry) => _convertEntry(entry, textStyle, iconSize, foregroundColor)).toList(),
+                entries.map(_revertEntry<T>).toList(),
+                query,
+              ).map((entry) => _convertEntry(entry, textStyle, iconSize, foregroundColor)).toList(),
       searchCallback: search == null ? null : (entries, index) => search(entries.map(_revertEntry<T>).toList(), index),
     );
   }
@@ -313,8 +313,7 @@ extension _CreateStyle on JDropdownMenu {
       borderRadius: BorderRadius.circular(overrides?.cornerRadius ?? JDimens.radius_s),
     );
 
-    final hintStyle =
-        overrides?.hintStyle ??
+    final hintStyle = overrides?.hintStyle ??
         textStyle?.copyWith(color: foregroundColor.withValues(alpha: overrides?.hintOpacity ?? J1Config.hintOpacity));
 
     return InputDecorationTheme(
@@ -348,8 +347,7 @@ extension _CreateStyle on JDropdownMenu {
       ),
     );
 
-    final hintStyle =
-        overrides?.hintStyle ??
+    final hintStyle = overrides?.hintStyle ??
         textStyle?.copyWith(color: foregroundColor.withValues(alpha: overrides?.hintOpacity ?? J1Config.hintOpacity));
 
     return InputDecorationTheme(
@@ -364,8 +362,7 @@ extension _CreateStyle on JDropdownMenu {
 
   InputDecorationTheme _createFlatStyle(Color foregroundColor, TextStyle? textStyle) {
     const border = OutlineInputBorder(borderSide: BorderSide.none);
-    final hintStyle =
-        overrides?.hintStyle ??
+    final hintStyle = overrides?.hintStyle ??
         textStyle?.copyWith(color: foregroundColor.withValues(alpha: overrides?.hintOpacity ?? J1Config.hintOpacity));
 
     return InputDecorationTheme(border: border, hintStyle: hintStyle);

@@ -30,17 +30,17 @@ class JFontCardOverrides extends Equatable {
 
   @override
   List<Object?> get props => [
-    padding,
-    cornerRadius,
-    elevation,
-    spacing,
-    foregroundColor,
-    backgroundColor,
-    outlineColor,
-    selectedOutlineColor,
-    outlineWidth,
-    selectedOutlineWidth,
-  ];
+        padding,
+        cornerRadius,
+        elevation,
+        spacing,
+        foregroundColor,
+        backgroundColor,
+        outlineColor,
+        selectedOutlineColor,
+        outlineWidth,
+        selectedOutlineWidth,
+      ];
 }
 
 class JFontCard extends StatelessWidget {

@@ -14,14 +14,14 @@ class JAppBar extends AppBar {
     super.backgroundColor,
     super.key,
   }) : super(
-         toolbarHeight: dimens.height,
-         automaticallyImplyLeading: false,
-         leadingWidth: dimens.leadingWidth + dimens.padding.left,
-         leading: _getLeading(leadingAction, dimens.padding.left),
-         titleSpacing: 0,
-         title: _getTitle(title, leadingAction != null, dimens.padding.left, dimens.titleSpacing, titleStyle),
-         actions: _getActions(trailingActions, dimens.actionSpacing, dimens.padding.right),
-       );
+          toolbarHeight: dimens.height,
+          automaticallyImplyLeading: false,
+          leadingWidth: dimens.leadingWidth + dimens.padding.left,
+          leading: _getLeading(leadingAction, dimens.padding.left),
+          titleSpacing: 0,
+          title: _getTitle(title, leadingAction != null, dimens.padding.left, dimens.titleSpacing, titleStyle),
+          actions: _getActions(trailingActions, dimens.actionSpacing, dimens.padding.right),
+        );
 }
 
 Widget? _getLeading(Widget? leading, double padding) {
