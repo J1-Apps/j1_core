@@ -2,9 +2,9 @@ name: flutter tests
 
 on:
   push:
-    branches: [develop, release]
+    branches: [main, release]
   pull_request:
-    branches: [develop, release]
+    branches: [main, release]
 
 jobs:
   tests:
@@ -14,10 +14,16 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
+      - name: install lcov
+        run: sudo apt-get install lcov
+
       - name: setup flutter
         uses: subosito/flutter-action@v2
         with:
           channel: "stable"
+
+      - name: setup melos
+        run: dart pub global activate melos
 
       - name: check version
         run: flutter --version
@@ -25,11 +31,15 @@ jobs:
       - name: update dependencies
         run: flutter pub get
 
+      - name: update catalog dependencies
+        working-directory: ./packages/j1_ui/catalog
+        run: flutter pub get
+
       - name: analyze
         run: flutter analyze
 
       - name: test
-        run: flutter test --coverage
+        run: bash ./generate_coverage.sh
 
       - name: upload to codecov
         uses: codecov/codecov-action@v4

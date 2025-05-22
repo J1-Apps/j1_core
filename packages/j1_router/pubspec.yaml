@@ -1,6 +1,6 @@
 name: j1_router
 description: A router for the J1 apps.
-version: 1.0.3
+version: 1.0.0
 publish_to: none
 resolution: workspace
 
@@ -21,9 +21,7 @@ dev_dependencies:
     sdk: flutter
 
   j1_lints:
-    git:
-      url: https://github.com/J1-Apps/j1_lints.git
-      ref: v1.0.2
+    path: ../j1_lints
       
   mocktail: ^1.0.4
 

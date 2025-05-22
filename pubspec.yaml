@@ -1,5 +1,6 @@
 name: j1_core
 publish_to: none
+version: 1.0.0
 environment:
   sdk: ">=3.6.0 <4.0.0"
   flutter: ">=3.27.1 <4.0.0"

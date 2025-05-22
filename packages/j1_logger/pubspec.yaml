@@ -1,6 +1,6 @@
 name: j1_logger
 description: A logger for use throughout the J1 app.
-version: 1.1.2
+version: 1.0.0
 publish_to: none
 resolution: workspace
 
@@ -15,9 +15,7 @@ dependencies:
 
 dev_dependencies:
   j1_lints:
-    git:
-      url: https://github.com/J1-Apps/j1_lints.git
-      ref: v1.0.2
+    path: ../j1_lints
 
   mocktail: ^1.0.4
   test: ^1.24.0

@@ -1,6 +1,6 @@
 name: j1_lints
 description: A set of lints for use throughout the J1 dart ecosystem.
-version: 1.0.2
+version: 1.0.0
 publish_to: none
 resolution: workspace
 
