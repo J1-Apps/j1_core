@@ -12,7 +12,7 @@ extension JColorExtensions on Color {
   }
 
   bool isLight() {
-    return (red * 0.3 + green * 0.6 + blue * 0.1) > 186;
+    return (r * 0.3 + g * 0.6 + b * 0.1) > 0.72;
   }
 
   bool isDark() {
@@ -43,10 +43,10 @@ extension JColorExtensions on Color {
       buffer.write("#");
     }
 
-    buffer.write(alpha.toRadixString(16).padLeft(2, "0"));
-    buffer.write(red.toRadixString(16).padLeft(2, "0"));
-    buffer.write(green.toRadixString(16).padLeft(2, "0"));
-    buffer.write(blue.toRadixString(16).padLeft(2, "0"));
+    buffer.write((a * 255.0).ceil().toRadixString(16).padLeft(2, "0"));
+    buffer.write((r * 255.0).floor().toRadixString(16).padLeft(2, "0"));
+    buffer.write((g * 255.0).floor().toRadixString(16).padLeft(2, "0"));
+    buffer.write((b * 255.0).floor().toRadixString(16).padLeft(2, "0"));
     return buffer.toString();
   }
 
