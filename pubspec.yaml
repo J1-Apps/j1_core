@@ -1,0 +1,17 @@
+name: j1_core
+publish_to: none
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.1 <4.0.0"
+
+workspace:
+  - packages/j1_crash_handler
+  - packages/j1_environment
+  - packages/j1_lints
+  - packages/j1_logger
+  - packages/j1_router
+  - packages/j1_theme
+  - packages/j1_ui
+
+flutter:
+  uses-material-design: true
