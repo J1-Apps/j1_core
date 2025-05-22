@@ -1,5 +1,4 @@
-// TODO: Uncomment once version solving is resolved.
-// import "package:cached_network_image/cached_network_image.dart";
+import "package:cached_network_image/cached_network_image.dart";
 import "package:flutter/material.dart";
 import "package:flutter_svg/flutter_svg.dart";
 import "package:j1_ui/j1_ui.dart";
@@ -21,36 +20,36 @@ abstract class JImage<SourceType> extends StatelessWidget {
   });
 }
 
-// class JNetworkImage extends _Image<String> {
-//   final int? imageWidth;
-//   final int? imageHeight;
+class JNetworkImage extends JImage<String> {
+  final int? imageWidth;
+  final int? imageHeight;
 
-//   const JNetworkImage({
-//     super.key,
-//     required super.source,
-//     required super.fit,
-//     super.alignment,
-//     super.opacity = 1,
-//     super.color,
-//     this.imageHeight,
-//     this.imageWidth,
-//   });
+  const JNetworkImage({
+    super.key,
+    required super.source,
+    required super.fit,
+    super.alignment,
+    super.opacity = 1,
+    super.color,
+    this.imageHeight,
+    this.imageWidth,
+  });
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return CachedNetworkImage(
-//       imageUrl: source,
-//       fit: fit,
-//       memCacheWidth: imageWidth,
-//       maxWidthDiskCache: imageWidth,
-//       memCacheHeight: imageHeight,
-//       maxHeightDiskCache: imageHeight,
-//       alignment: alignment ?? Alignment.center,
-//       color: opacity == 1 ? null : Color.fromRGBO(255, 255, 255, opacity),
-//       colorBlendMode: opacity == 1 ? null : BlendMode.modulate,
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return CachedNetworkImage(
+      imageUrl: source,
+      fit: fit,
+      memCacheWidth: imageWidth,
+      maxWidthDiskCache: imageWidth,
+      memCacheHeight: imageHeight,
+      maxHeightDiskCache: imageHeight,
+      alignment: alignment ?? Alignment.center,
+      color: opacity == 1 ? null : Color.fromRGBO(255, 255, 255, opacity),
+      colorBlendMode: opacity == 1 ? null : BlendMode.modulate,
+    );
+  }
+}
 
 class JSvgImage extends JImage<String> {
   const JSvgImage({
