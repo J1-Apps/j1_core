@@ -12,6 +12,8 @@ class GoRouteGraph extends J1RouteGraph {
 }
 
 go.GoRoute _buildRoute(J1RouteNode node) {
+  final redirect = node.route.redirect;
+
   return go.GoRoute(
     path: node.route.relativePath,
     builder: (context, state) => node.builder(
@@ -19,5 +21,6 @@ go.GoRoute _buildRoute(J1RouteNode node) {
       node.route.configParser(pathParams: state.pathParameters, queryParams: state.uri.queryParameters),
     ),
     routes: node.routes.map(_buildRoute).toList(),
+    redirect: redirect != null ? (context, _) => redirect(context) : null,
   );
 }
