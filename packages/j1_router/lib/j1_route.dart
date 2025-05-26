@@ -1,4 +1,7 @@
+import "dart:async";
+
 import "package:equatable/equatable.dart";
+import "package:flutter/material.dart";
 
 /// A function that creates a [RouteConfig] from a set of raw path and query params.
 ///
@@ -15,6 +18,7 @@ class J1Route<T extends RouteConfig> {
   final List<QueryParam> queryParams;
   final ConfigParser<T> configParser;
   final int relativePathParts;
+  final FutureOr<String?> Function(BuildContext context)? redirect;
 
   /// The relative path of this route to its parent route.
   String get relativePath => _buildPath(components: parts.sublist(parts.length - relativePathParts));
@@ -33,6 +37,7 @@ class J1Route<T extends RouteConfig> {
     this.queryParams = const [],
     required this.configParser,
     this.relativePathParts = 1,
+    this.redirect,
   });
 
   /// Builds a [String] path for this route from a provided [RouteConfig].

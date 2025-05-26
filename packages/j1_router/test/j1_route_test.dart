@@ -25,7 +25,7 @@ final class TestRouteConfig extends RouteConfig {
   }
 }
 
-const testRoute = J1Route<TestRouteConfig>(
+final testRoute = J1Route<TestRouteConfig>(
   parts: [
     PathSegment("/"),
     PathSegment("test0"),
@@ -37,6 +37,7 @@ const testRoute = J1Route<TestRouteConfig>(
   queryParams: [QueryParam<String>("query0", "default2"), QueryParam<int>("query1", null)],
   configParser: TestRouteConfig.parser,
   relativePathParts: 5,
+  redirect: (_) => null,
 );
 
 const homeRoute = J1Route<EmptyRouteConfig>(parts: [PathSegment("/")], configParser: EmptyRouteConfig.parser);
