@@ -1,6 +1,5 @@
 library;
 
-export "firebase_crash_handler.dart";
 export "local_crash_handler.dart";
 
 import "package:flutter/foundation.dart";
@@ -18,8 +17,10 @@ abstract class J1CrashHandler {
   /// Configures the crash handler to handle Flutter errors.
   ///
   /// This method must be called in the app's initialization.
+  // coverage:ignore-start
   void configure() {
     FlutterError.onError = handleFlutterError;
     PlatformDispatcher.instance.onError = handleAsyncError;
   }
+  // coverage:ignore-end
 }

@@ -10,7 +10,7 @@ class _TestEnvironment extends J1Environment {
   FirebaseOptions? get firebaseOptions => null;
 
   @override
-  J1CrashHandler get crashHandler => const LocalCrashHandler();
+  J1CrashHandler get crashHandler => LocalCrashHandler();
 
   @override
   J1Logger get logger => LocalLogger();
