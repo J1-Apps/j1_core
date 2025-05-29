@@ -1,8 +1,8 @@
+import "package:flutter_test/flutter_test.dart";
 import "package:get_it/get_it.dart";
 import "package:j1_logger/j1_logger.dart";
 import "package:logger/logger.dart";
 import "package:mocktail/mocktail.dart";
-import "package:test/test.dart";
 
 class MockLogger extends Mock implements Logger {}
 

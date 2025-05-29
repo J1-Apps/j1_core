@@ -22,9 +22,6 @@ jobs:
         with:
           channel: "stable"
 
-      - name: setup melos
-        run: dart pub global activate melos
-
       - name: check version
         run: flutter --version
 
@@ -39,7 +36,7 @@ jobs:
         run: flutter analyze
 
       - name: test
-        run: bash ./generate_coverage.sh
+        run: bash ./run_coverage.sh
 
       - name: upload to codecov
         uses: codecov/codecov-action@v4
