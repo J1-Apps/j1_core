@@ -1,0 +1,30 @@
+name: j1_core_firebase
+description: The Firebase components for the J1 Core library.
+version: 1.0.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.1 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  j1_core_base:
+    path: ../j1_core_base
+
+  firebase_crashlytics: ^4.0.4
+  firebase_core: ^3.13.1
+  firebase_analytics: ^11.4.6
+  get_it: ^8.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  mocktail: ^1.0.4
+
+flutter:
+  uses-material-design: true
