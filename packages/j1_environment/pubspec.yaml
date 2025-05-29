@@ -22,7 +22,6 @@ dependencies:
     path: ../j1_router
 
   get_it: ^8.0.2
-  firebase_core: ^3.3.0
 
 dev_dependencies:
   flutter_test:
