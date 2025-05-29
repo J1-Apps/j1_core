@@ -9,7 +9,7 @@ import "../helpers/test_wrapper.dart";
 void main() {
   group("Dropdown Menu", () {
     testWidgets("outlined dropdown menu can be selected", (tester) async {
-      final onSelected = MockCallback<String>();
+      final onSelected = MockCallback<String?>();
 
       await tester.pumpWidget(
         TestWrapper(
@@ -46,7 +46,7 @@ void main() {
     });
 
     testWidgets("underlined dropdown menu can be selected", (tester) async {
-      final onSelected = MockCallback<String>();
+      final onSelected = MockCallback<String?>();
 
       await tester.pumpWidget(
         TestWrapper(
@@ -84,7 +84,7 @@ void main() {
     });
 
     testWidgets("flat dropdown menu can be selected", (tester) async {
-      final onSelected = MockCallback<String>();
+      final onSelected = MockCallback<String?>();
 
       await tester.pumpWidget(
         TestWrapper(
@@ -122,7 +122,7 @@ void main() {
     });
 
     testWidgets("dropdown menu can be searched", (tester) async {
-      final onSelected = MockCallback<String>();
+      final onSelected = MockCallback<String?>();
 
       await tester.pumpWidget(
         TestWrapper(
@@ -151,7 +151,7 @@ void main() {
     });
 
     testWidgets("dropdown menu can be filtered", (tester) async {
-      final onSelected = MockCallback<String>();
+      final onSelected = MockCallback<String?>();
 
       await tester.pumpWidget(
         TestWrapper(

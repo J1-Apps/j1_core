@@ -7,7 +7,7 @@ abstract class _MockVoidCallback {
 class MockVoidCallback extends Mock implements _MockVoidCallback {}
 
 abstract class _MockCallback<T> {
-  void call(value);
+  void call(T value);
 }
 
 class MockCallback<T> extends Mock implements _MockCallback<T> {}

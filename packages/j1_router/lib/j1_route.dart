@@ -108,7 +108,10 @@ final class EmptyRouteConfig extends RouteConfig {
 
   const EmptyRouteConfig();
 
-  static EmptyRouteConfig parser({required pathParams, required queryParams}) {
+  static EmptyRouteConfig parser({
+    required Map<String, String> pathParams,
+    required Map<String, String> queryParams,
+  }) {
     return const EmptyRouteConfig();
   }
 }
