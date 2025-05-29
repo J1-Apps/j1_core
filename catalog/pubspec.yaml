@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
 
   j1_core_base:
-    path: ../j1_core_base
+    path: ../packages/j1_core_base
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1

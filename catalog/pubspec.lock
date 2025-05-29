@@ -259,7 +259,7 @@ packages:
   j1_core_base:
     dependency: "direct main"
     description:
-      path: "../j1_core_base"
+      path: "../packages/j1_core_base"
       relative: true
     source: path
     version: "1.0.0"
