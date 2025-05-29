@@ -1,5 +1,6 @@
 library;
 
+export "j1_crash_handler.dart";
 export "local_crash_handler.dart";
 
 import "package:flutter/foundation.dart";
