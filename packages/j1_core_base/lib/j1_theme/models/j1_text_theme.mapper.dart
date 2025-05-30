@@ -183,20 +183,20 @@ class _J1TextStyleCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, J1TextSty
   late final ClassMapperBase<J1TextStyle> $mapper = J1TextStyleMapper.ensureInitialized();
   @override
   $R call({String? fontFamily, double? fontSize, double? height, J1FontWeight? fontWeight}) => $apply(
-        FieldCopyWithData({
-          if (fontFamily != null) #fontFamily: fontFamily,
-          if (fontSize != null) #fontSize: fontSize,
-          if (height != null) #height: height,
-          if (fontWeight != null) #fontWeight: fontWeight,
-        }),
-      );
+    FieldCopyWithData({
+      if (fontFamily != null) #fontFamily: fontFamily,
+      if (fontSize != null) #fontSize: fontSize,
+      if (height != null) #height: height,
+      if (fontWeight != null) #fontWeight: fontWeight,
+    }),
+  );
   @override
   J1TextStyle $make(CopyWithData data) => J1TextStyle.displayLarge(
-        fontFamily: data.get(#fontFamily, or: $value.fontFamily),
-        fontSize: data.get(#fontSize, or: $value.fontSize),
-        height: data.get(#height, or: $value.height),
-        fontWeight: data.get(#fontWeight, or: $value.fontWeight),
-      );
+    fontFamily: data.get(#fontFamily, or: $value.fontFamily),
+    fontSize: data.get(#fontSize, or: $value.fontSize),
+    height: data.get(#height, or: $value.height),
+    fontWeight: data.get(#fontWeight, or: $value.fontWeight),
+  );
 
   @override
   J1TextStyleCopyWith<$R2, J1TextStyle, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
@@ -436,44 +436,43 @@ class _J1TextThemeCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, J1TextThe
     J1TextStyle? labelLarge,
     J1TextStyle? labelMedium,
     J1TextStyle? labelSmall,
-  }) =>
-      $apply(
-        FieldCopyWithData({
-          if (displayLarge != null) #displayLarge: displayLarge,
-          if (displayMedium != null) #displayMedium: displayMedium,
-          if (displaySmall != null) #displaySmall: displaySmall,
-          if (headlineLarge != null) #headlineLarge: headlineLarge,
-          if (headlineMedium != null) #headlineMedium: headlineMedium,
-          if (headlineSmall != null) #headlineSmall: headlineSmall,
-          if (titleLarge != null) #titleLarge: titleLarge,
-          if (titleMedium != null) #titleMedium: titleMedium,
-          if (titleSmall != null) #titleSmall: titleSmall,
-          if (bodyLarge != null) #bodyLarge: bodyLarge,
-          if (bodyMedium != null) #bodyMedium: bodyMedium,
-          if (bodySmall != null) #bodySmall: bodySmall,
-          if (labelLarge != null) #labelLarge: labelLarge,
-          if (labelMedium != null) #labelMedium: labelMedium,
-          if (labelSmall != null) #labelSmall: labelSmall,
-        }),
-      );
+  }) => $apply(
+    FieldCopyWithData({
+      if (displayLarge != null) #displayLarge: displayLarge,
+      if (displayMedium != null) #displayMedium: displayMedium,
+      if (displaySmall != null) #displaySmall: displaySmall,
+      if (headlineLarge != null) #headlineLarge: headlineLarge,
+      if (headlineMedium != null) #headlineMedium: headlineMedium,
+      if (headlineSmall != null) #headlineSmall: headlineSmall,
+      if (titleLarge != null) #titleLarge: titleLarge,
+      if (titleMedium != null) #titleMedium: titleMedium,
+      if (titleSmall != null) #titleSmall: titleSmall,
+      if (bodyLarge != null) #bodyLarge: bodyLarge,
+      if (bodyMedium != null) #bodyMedium: bodyMedium,
+      if (bodySmall != null) #bodySmall: bodySmall,
+      if (labelLarge != null) #labelLarge: labelLarge,
+      if (labelMedium != null) #labelMedium: labelMedium,
+      if (labelSmall != null) #labelSmall: labelSmall,
+    }),
+  );
   @override
   J1TextTheme $make(CopyWithData data) => J1TextTheme(
-        displayLarge: data.get(#displayLarge, or: $value.displayLarge),
-        displayMedium: data.get(#displayMedium, or: $value.displayMedium),
-        displaySmall: data.get(#displaySmall, or: $value.displaySmall),
-        headlineLarge: data.get(#headlineLarge, or: $value.headlineLarge),
-        headlineMedium: data.get(#headlineMedium, or: $value.headlineMedium),
-        headlineSmall: data.get(#headlineSmall, or: $value.headlineSmall),
-        titleLarge: data.get(#titleLarge, or: $value.titleLarge),
-        titleMedium: data.get(#titleMedium, or: $value.titleMedium),
-        titleSmall: data.get(#titleSmall, or: $value.titleSmall),
-        bodyLarge: data.get(#bodyLarge, or: $value.bodyLarge),
-        bodyMedium: data.get(#bodyMedium, or: $value.bodyMedium),
-        bodySmall: data.get(#bodySmall, or: $value.bodySmall),
-        labelLarge: data.get(#labelLarge, or: $value.labelLarge),
-        labelMedium: data.get(#labelMedium, or: $value.labelMedium),
-        labelSmall: data.get(#labelSmall, or: $value.labelSmall),
-      );
+    displayLarge: data.get(#displayLarge, or: $value.displayLarge),
+    displayMedium: data.get(#displayMedium, or: $value.displayMedium),
+    displaySmall: data.get(#displaySmall, or: $value.displaySmall),
+    headlineLarge: data.get(#headlineLarge, or: $value.headlineLarge),
+    headlineMedium: data.get(#headlineMedium, or: $value.headlineMedium),
+    headlineSmall: data.get(#headlineSmall, or: $value.headlineSmall),
+    titleLarge: data.get(#titleLarge, or: $value.titleLarge),
+    titleMedium: data.get(#titleMedium, or: $value.titleMedium),
+    titleSmall: data.get(#titleSmall, or: $value.titleSmall),
+    bodyLarge: data.get(#bodyLarge, or: $value.bodyLarge),
+    bodyMedium: data.get(#bodyMedium, or: $value.bodyMedium),
+    bodySmall: data.get(#bodySmall, or: $value.bodySmall),
+    labelLarge: data.get(#labelLarge, or: $value.labelLarge),
+    labelMedium: data.get(#labelMedium, or: $value.labelMedium),
+    labelSmall: data.get(#labelSmall, or: $value.labelSmall),
+  );
 
   @override
   J1TextThemeCopyWith<$R2, J1TextTheme, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>

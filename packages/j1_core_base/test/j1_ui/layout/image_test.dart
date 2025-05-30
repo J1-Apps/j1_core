@@ -10,10 +10,7 @@ void main() {
     testWidgets("renders from network as expected", (tester) async {
       await tester.pumpWidget(
         const TestWrapper(
-          child: JNetworkImage(
-            source: "test.com",
-            fit: BoxFit.cover,
-          ),
+          child: JNetworkImage(source: "test.com", fit: BoxFit.cover),
         ),
       );
 

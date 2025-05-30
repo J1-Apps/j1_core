@@ -42,21 +42,21 @@ class JTextFieldOverrides extends Equatable {
 
   @override
   List<Object?> get props => [
-        padding,
-        cornerRadius,
-        iconSize,
-        iconButtonSize,
-        iconButtonPadding,
-        strokeWidth,
-        foregroundColor,
-        backgroundColor,
-        iconColor,
-        errorColor,
-        hintOpacity,
-        disabledOpacity,
-        textStyle,
-        errorStyle,
-      ];
+    padding,
+    cornerRadius,
+    iconSize,
+    iconButtonSize,
+    iconButtonPadding,
+    strokeWidth,
+    foregroundColor,
+    backgroundColor,
+    iconColor,
+    errorColor,
+    hintOpacity,
+    disabledOpacity,
+    textStyle,
+    errorStyle,
+  ];
 }
 
 class JTextField extends StatelessWidget {
@@ -125,8 +125,8 @@ class JTextField extends StatelessWidget {
 
     final resolvedErrorText = errorText != null
         ? showErrorText
-            ? errorText
-            : ""
+              ? errorText
+              : ""
         : null;
 
     final decoration = rawDecoration.copyWith(isDense: true, hintText: hint, errorText: resolvedErrorText);
@@ -302,26 +302,26 @@ extension _CreateStyle on JTextField {
   (EdgeInsets, EdgeInsets, double, double) _createTextFieldDimens() {
     return switch (size) {
       JWidgetSize.large => (
-          overrides?.padding ??
-              const EdgeInsets.symmetric(horizontal: JDimens.spacing_m, vertical: JDimens.spacing_m - 2),
-          overrides?.iconButtonPadding ?? const EdgeInsets.only(left: 8, right: 12),
-          overrides?.iconButtonSize ?? 36,
-          overrides?.iconSize ?? 28,
-        ),
+        overrides?.padding ??
+            const EdgeInsets.symmetric(horizontal: JDimens.spacing_m, vertical: JDimens.spacing_m - 2),
+        overrides?.iconButtonPadding ?? const EdgeInsets.only(left: 8, right: 12),
+        overrides?.iconButtonSize ?? 36,
+        overrides?.iconSize ?? 28,
+      ),
       JWidgetSize.medium => (
-          overrides?.padding ??
-              const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s - 2),
-          overrides?.iconButtonPadding ?? const EdgeInsets.only(left: 8, right: 8),
-          overrides?.iconButtonSize ?? 32,
-          overrides?.iconSize ?? 24,
-        ),
+        overrides?.padding ??
+            const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s - 2),
+        overrides?.iconButtonPadding ?? const EdgeInsets.only(left: 8, right: 8),
+        overrides?.iconButtonSize ?? 32,
+        overrides?.iconSize ?? 24,
+      ),
       JWidgetSize.small => (
-          overrides?.padding ??
-              const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s - 2),
-          overrides?.iconButtonPadding ?? const EdgeInsets.only(left: 8, right: 6),
-          overrides?.iconButtonSize ?? 28,
-          overrides?.iconSize ?? 20,
-        ),
+        overrides?.padding ??
+            const EdgeInsets.symmetric(horizontal: JDimens.spacing_s, vertical: JDimens.spacing_s - 2),
+        overrides?.iconButtonPadding ?? const EdgeInsets.only(left: 8, right: 6),
+        overrides?.iconButtonSize ?? 28,
+        overrides?.iconSize ?? 20,
+      ),
     };
   }
 
@@ -330,7 +330,8 @@ extension _CreateStyle on JTextField {
     TextTheme fonts,
     Color foregroundColor,
   ) {
-    final style = overrides?.textStyle ??
+    final style =
+        overrides?.textStyle ??
         switch (size) {
           JWidgetSize.large => fonts.titleLarge,
           JWidgetSize.medium => fonts.titleMedium,

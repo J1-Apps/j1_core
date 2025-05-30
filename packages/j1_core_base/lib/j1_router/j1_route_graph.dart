@@ -25,7 +25,7 @@ final class J1RouteNode<T extends RouteConfig> {
   final List<J1RouteNode> routes;
 
   const J1RouteNode({required this.route, required RouteBuilder<T> builder, this.routes = const []})
-      : _builder = builder;
+    : _builder = builder;
 
   Widget builder(BuildContext context, RouteConfig config) {
     if (config is! T) {

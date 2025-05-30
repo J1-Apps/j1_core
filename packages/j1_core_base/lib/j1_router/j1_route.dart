@@ -6,8 +6,8 @@ import "package:flutter/material.dart";
 /// A function that creates a [RouteConfig] from a set of raw path and query params.
 ///
 /// Generally a [RouteConfig] should have a function with a [ConfigParser] signature.
-typedef ConfigParser<T extends RouteConfig> = T Function(
-    {required Map<String, String> pathParams, required Map<String, String> queryParams});
+typedef ConfigParser<T extends RouteConfig> =
+    T Function({required Map<String, String> pathParams, required Map<String, String> queryParams});
 
 /// A route for a page accessible via a router. A route is parameterized by a [RouteConfig], which supplies the path
 /// and query paramters to the widget builders.
@@ -108,10 +108,7 @@ final class EmptyRouteConfig extends RouteConfig {
 
   const EmptyRouteConfig();
 
-  static EmptyRouteConfig parser({
-    required Map<String, String> pathParams,
-    required Map<String, String> queryParams,
-  }) {
+  static EmptyRouteConfig parser({required Map<String, String> pathParams, required Map<String, String> queryParams}) {
     return const EmptyRouteConfig();
   }
 }

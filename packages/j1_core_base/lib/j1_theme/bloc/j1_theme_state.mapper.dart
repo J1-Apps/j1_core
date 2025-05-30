@@ -115,18 +115,18 @@ class _J1ThemeStateCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, J1ThemeS
       $value.textTheme.copyWith.$chain((v) => call(textTheme: v));
   @override
   $R call({J1ColorScheme? colorScheme, J1TextTheme? textTheme, J1PageTransition? pageTransition}) => $apply(
-        FieldCopyWithData({
-          if (colorScheme != null) #colorScheme: colorScheme,
-          if (textTheme != null) #textTheme: textTheme,
-          if (pageTransition != null) #pageTransition: pageTransition,
-        }),
-      );
+    FieldCopyWithData({
+      if (colorScheme != null) #colorScheme: colorScheme,
+      if (textTheme != null) #textTheme: textTheme,
+      if (pageTransition != null) #pageTransition: pageTransition,
+    }),
+  );
   @override
   J1ThemeState $make(CopyWithData data) => J1ThemeState(
-        colorScheme: data.get(#colorScheme, or: $value.colorScheme),
-        textTheme: data.get(#textTheme, or: $value.textTheme),
-        pageTransition: data.get(#pageTransition, or: $value.pageTransition),
-      );
+    colorScheme: data.get(#colorScheme, or: $value.colorScheme),
+    textTheme: data.get(#textTheme, or: $value.textTheme),
+    pageTransition: data.get(#pageTransition, or: $value.pageTransition),
+  );
 
   @override
   J1ThemeStateCopyWith<$R2, J1ThemeState, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
