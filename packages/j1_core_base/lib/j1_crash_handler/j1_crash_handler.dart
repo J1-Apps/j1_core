@@ -23,5 +23,6 @@ abstract class J1CrashHandler {
     FlutterError.onError = handleFlutterError;
     PlatformDispatcher.instance.onError = handleAsyncError;
   }
+
   // coverage:ignore-end
 }

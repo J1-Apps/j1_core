@@ -33,19 +33,19 @@ class JThemeCardOverrides extends Equatable {
 
   @override
   List<Object?> get props => [
-        padding,
-        cornerRadius,
-        elevation,
-        cardSpacing,
-        colorSpacing,
-        fontSpacing,
-        outlineWidth,
-        selectedOutlineWidth,
-        colorOutlineWidth,
-        colorSize,
-        colorIconSize,
-        colorIcon,
-      ];
+    padding,
+    cornerRadius,
+    elevation,
+    cardSpacing,
+    colorSpacing,
+    fontSpacing,
+    outlineWidth,
+    selectedOutlineWidth,
+    colorOutlineWidth,
+    colorSize,
+    colorIconSize,
+    colorIcon,
+  ];
 }
 
 class JThemeCard extends StatelessWidget {

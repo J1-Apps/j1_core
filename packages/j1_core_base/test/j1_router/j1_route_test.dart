@@ -15,10 +15,7 @@ final class TestRouteConfig extends RouteConfig {
 
   const TestRouteConfig({required this.path0, required this.path1, this.query0, this.query1});
 
-  static TestRouteConfig parser({
-    required Map<String, String> pathParams,
-    required Map<String, String> queryParams,
-  }) {
+  static TestRouteConfig parser({required Map<String, String> pathParams, required Map<String, String> queryParams}) {
     return TestRouteConfig(
       path0: pathParams["path0"] ?? "default",
       path1: bool.tryParse(pathParams["path1"] ?? "") ?? false,

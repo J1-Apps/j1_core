@@ -23,9 +23,7 @@ void main() {
 
   group("Firebase Logger", () {
     test("sets default params and handles all three log types", () {
-      when(
-        () => analytics.setDefaultEventParameters(any()),
-      ).thenAnswer((_) => Future.value());
+      when(() => analytics.setDefaultEventParameters(any())).thenAnswer((_) => Future.value());
 
       when(
         () => analytics.logEvent(

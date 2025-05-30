@@ -20,13 +20,9 @@ void main() {
 
   group("Firebase Crash Handler", () {
     test("logs flutter and async crashes", () {
-      when(
-        () => crashlytics.recordFlutterFatalError(any()),
-      ).thenAnswer((_) async {});
+      when(() => crashlytics.recordFlutterFatalError(any())).thenAnswer((_) async {});
 
-      when(
-        () => crashlytics.recordError(any(), any(), fatal: any(named: "fatal")),
-      ).thenAnswer((_) async {});
+      when(() => crashlytics.recordError(any(), any(), fatal: any(named: "fatal"))).thenAnswer((_) async {});
 
       firebaseCrashHandler.handleFlutterError(flutterErrorDetails);
       verify(() => crashlytics.recordFlutterFatalError(flutterErrorDetails)).called(1);

@@ -19,30 +19,30 @@ class J1ThemeBloc extends Bloc<J1ThemeEvent, J1ThemeState> {
     required J1ColorScheme defaultColorScheme,
     required J1TextTheme defaultTextTheme,
     J1PageTransition defaultPageTransition = J1PageTransition.cupertino,
-  })  : _repository = repository ?? _locator.get<J1ThemeRepository>(),
-        _onError = onError ?? _defaultOnError,
-        super(
-          J1ThemeState(
-            colorScheme: defaultColorScheme,
-            textTheme: defaultTextTheme,
-            pageTransition: defaultPageTransition,
-          ),
-        ) {
+  }) : _repository = repository ?? _locator.get<J1ThemeRepository>(),
+       _onError = onError ?? _defaultOnError,
+       super(
+         J1ThemeState(
+           colorScheme: defaultColorScheme,
+           textTheme: defaultTextTheme,
+           pageTransition: defaultPageTransition,
+         ),
+       ) {
     on<UpdateColorSchemeEvent>(_onUpdateColorScheme);
     on<UpdateTextThemeEvent>(_onUpdateTextTheme);
     on<UpdatePageTransitionEvent>(_onUpdatePageTransition);
 
     _colorSchemeSubscription = _repository.getColorStream().listen(
-          (colorScheme) => add(UpdateColorSchemeEvent(colorScheme, fromStream: true)),
-        );
+      (colorScheme) => add(UpdateColorSchemeEvent(colorScheme, fromStream: true)),
+    );
 
     _textThemeSubscription = _repository.getTextStream().listen(
-          (textTheme) => add(UpdateTextThemeEvent(textTheme, fromStream: true)),
-        );
+      (textTheme) => add(UpdateTextThemeEvent(textTheme, fromStream: true)),
+    );
 
     _pageTransitionSubscription = _repository.getTransitionStream().listen(
-          (pageTransition) => add(UpdatePageTransitionEvent(pageTransition, fromStream: true)),
-        );
+      (pageTransition) => add(UpdatePageTransitionEvent(pageTransition, fromStream: true)),
+    );
   }
 
   Future<void> _onUpdateColorScheme(UpdateColorSchemeEvent event, Emitter<J1ThemeState> emit) async {

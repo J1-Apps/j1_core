@@ -35,18 +35,18 @@ class JToastOverrides extends Equatable {
 
   @override
   List<Object?> get props => [
-        insetPadding,
-        contentPadding,
-        insetPadding,
-        cornerRadius,
-        elevation,
-        foregroundColor,
-        backgroundColor,
-        outlineColor,
-        outlineWidth,
-        textStyle,
-        closeIcon,
-      ];
+    insetPadding,
+    contentPadding,
+    insetPadding,
+    cornerRadius,
+    elevation,
+    foregroundColor,
+    backgroundColor,
+    outlineColor,
+    outlineWidth,
+    textStyle,
+    closeIcon,
+  ];
 }
 
 class JToast {
@@ -59,7 +59,8 @@ class JToast {
       backgroundColor: overrides?.backgroundColor ?? colors.surfaceContainer,
       elevation: overrides?.elevation ?? JDimens.elevation_m,
       padding: EdgeInsets.zero,
-      margin: overrides?.insetPadding ??
+      margin:
+          overrides?.insetPadding ??
           const EdgeInsets.symmetric(vertical: JDimens.spacing_xl, horizontal: JDimens.spacing_l),
       shape: RoundedRectangleBorder(
         side: BorderSide(
@@ -92,7 +93,8 @@ class JToast {
       children: [
         Expanded(child: child),
         Padding(
-          padding: overrides?.iconPadding ??
+          padding:
+              overrides?.iconPadding ??
               const EdgeInsets.symmetric(horizontal: JDimens.spacing_xs, vertical: JDimens.spacing_xs - 2),
           child: closeButton,
         ),
@@ -112,7 +114,8 @@ class JToast {
     final theme = context.theme();
 
     final content = Padding(
-      padding: overrides?.contentPadding ??
+      padding:
+          overrides?.contentPadding ??
           const EdgeInsets.symmetric(horizontal: JDimens.spacing_m, vertical: JDimens.spacing_m - 2),
       child: Text(
         text,
