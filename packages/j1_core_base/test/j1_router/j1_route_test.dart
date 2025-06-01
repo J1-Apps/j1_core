@@ -37,10 +37,27 @@ final testRoute = J1Route<TestRouteConfig>(
   queryParams: [QueryParam<String>("query0", "default2"), QueryParam<int>("query1", null)],
   configParser: TestRouteConfig.parser,
   relativePathParts: 5,
-  redirect: (_) => null,
 );
 
-const homeRoute = J1Route<EmptyRouteConfig>(parts: [PathSegment("/")], configParser: EmptyRouteConfig.parser);
+final redirectRoute = J1Route<EmptyRouteConfig>(
+  parts: [
+    PathSegment("/"),
+    PathSegment("test3"),
+  ],
+  configParser: EmptyRouteConfig.parser,
+);
+
+final redirectShellRoute = J1Route<EmptyRouteConfig>(
+  parts: [
+    PathSegment("/test4"),
+  ],
+  configParser: EmptyRouteConfig.parser,
+);
+
+const homeRoute = J1Route<EmptyRouteConfig>(
+  parts: [PathSegment("/")],
+  configParser: EmptyRouteConfig.parser,
+);
 
 void main() {
   group("J1 Route", () {
