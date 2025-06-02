@@ -25,9 +25,9 @@ class J1BrightnessMapper extends EnumMapper<J1Brightness> {
   @override
   J1Brightness decode(dynamic value) {
     switch (value) {
-      case 'dark':
+      case r'dark':
         return J1Brightness.dark;
-      case 'light':
+      case r'light':
         return J1Brightness.light;
       default:
         throw MapperException.unknownEnumValue(value);
@@ -38,9 +38,9 @@ class J1BrightnessMapper extends EnumMapper<J1Brightness> {
   dynamic encode(J1Brightness self) {
     switch (self) {
       case J1Brightness.dark:
-        return 'dark';
+        return r'dark';
       case J1Brightness.light:
-        return 'light';
+        return r'light';
     }
   }
 }
@@ -147,7 +147,7 @@ mixin J1ColorSchemeMappable {
   }
 
   J1ColorSchemeCopyWith<J1ColorScheme, J1ColorScheme, J1ColorScheme> get copyWith =>
-      _J1ColorSchemeCopyWithImpl(this as J1ColorScheme, $identity, $identity);
+      _J1ColorSchemeCopyWithImpl<J1ColorScheme, J1ColorScheme>(this as J1ColorScheme, $identity, $identity);
   @override
   String toString() {
     return J1ColorSchemeMapper.ensureInitialized().stringifyValue(this as J1ColorScheme);
@@ -166,7 +166,7 @@ mixin J1ColorSchemeMappable {
 
 extension J1ColorSchemeValueCopy<$R, $Out> on ObjectCopyWith<$R, J1ColorScheme, $Out> {
   J1ColorSchemeCopyWith<$R, J1ColorScheme, $Out> get $asJ1ColorScheme =>
-      $base.as((v, t, t2) => _J1ColorSchemeCopyWithImpl(v, t, t2));
+      $base.as((v, t, t2) => _J1ColorSchemeCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
 abstract class J1ColorSchemeCopyWith<$R, $In extends J1ColorScheme, $Out> implements ClassCopyWith<$R, $In, $Out> {
@@ -241,5 +241,5 @@ class _J1ColorSchemeCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, J1Color
 
   @override
   J1ColorSchemeCopyWith<$R2, J1ColorScheme, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _J1ColorSchemeCopyWithImpl($value, $cast, t);
+      _J1ColorSchemeCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }

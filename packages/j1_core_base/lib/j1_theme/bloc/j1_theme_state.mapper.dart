@@ -72,7 +72,7 @@ mixin J1ThemeStateMappable {
   }
 
   J1ThemeStateCopyWith<J1ThemeState, J1ThemeState, J1ThemeState> get copyWith =>
-      _J1ThemeStateCopyWithImpl(this as J1ThemeState, $identity, $identity);
+      _J1ThemeStateCopyWithImpl<J1ThemeState, J1ThemeState>(this as J1ThemeState, $identity, $identity);
   @override
   String toString() {
     return J1ThemeStateMapper.ensureInitialized().stringifyValue(this as J1ThemeState);
@@ -91,7 +91,7 @@ mixin J1ThemeStateMappable {
 
 extension J1ThemeStateValueCopy<$R, $Out> on ObjectCopyWith<$R, J1ThemeState, $Out> {
   J1ThemeStateCopyWith<$R, J1ThemeState, $Out> get $asJ1ThemeState =>
-      $base.as((v, t, t2) => _J1ThemeStateCopyWithImpl(v, t, t2));
+      $base.as((v, t, t2) => _J1ThemeStateCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
 abstract class J1ThemeStateCopyWith<$R, $In extends J1ThemeState, $Out> implements ClassCopyWith<$R, $In, $Out> {
@@ -130,5 +130,5 @@ class _J1ThemeStateCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, J1ThemeS
 
   @override
   J1ThemeStateCopyWith<$R2, J1ThemeState, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _J1ThemeStateCopyWithImpl($value, $cast, t);
+      _J1ThemeStateCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }

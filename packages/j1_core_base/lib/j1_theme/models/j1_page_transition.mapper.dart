@@ -25,9 +25,9 @@ class J1PageTransitionMapper extends EnumMapper<J1PageTransition> {
   @override
   J1PageTransition decode(dynamic value) {
     switch (value) {
-      case 'cupertino':
+      case r'cupertino':
         return J1PageTransition.cupertino;
-      case 'zoom':
+      case r'zoom':
         return J1PageTransition.zoom;
       default:
         throw MapperException.unknownEnumValue(value);
@@ -38,9 +38,9 @@ class J1PageTransitionMapper extends EnumMapper<J1PageTransition> {
   dynamic encode(J1PageTransition self) {
     switch (self) {
       case J1PageTransition.cupertino:
-        return 'cupertino';
+        return r'cupertino';
       case J1PageTransition.zoom:
-        return 'zoom';
+        return r'zoom';
     }
   }
 }
