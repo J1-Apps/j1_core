@@ -25,23 +25,23 @@ class J1FontWeightMapper extends EnumMapper<J1FontWeight> {
   @override
   J1FontWeight decode(dynamic value) {
     switch (value) {
-      case 'thin':
+      case r'thin':
         return J1FontWeight.thin;
-      case 'extraLight':
+      case r'extraLight':
         return J1FontWeight.extraLight;
-      case 'light':
+      case r'light':
         return J1FontWeight.light;
-      case 'normal':
+      case r'normal':
         return J1FontWeight.normal;
-      case 'medium':
+      case r'medium':
         return J1FontWeight.medium;
-      case 'semiBold':
+      case r'semiBold':
         return J1FontWeight.semiBold;
-      case 'bold':
+      case r'bold':
         return J1FontWeight.bold;
-      case 'extraBold':
+      case r'extraBold':
         return J1FontWeight.extraBold;
-      case 'black':
+      case r'black':
         return J1FontWeight.black;
       default:
         throw MapperException.unknownEnumValue(value);
@@ -52,23 +52,23 @@ class J1FontWeightMapper extends EnumMapper<J1FontWeight> {
   dynamic encode(J1FontWeight self) {
     switch (self) {
       case J1FontWeight.thin:
-        return 'thin';
+        return r'thin';
       case J1FontWeight.extraLight:
-        return 'extraLight';
+        return r'extraLight';
       case J1FontWeight.light:
-        return 'light';
+        return r'light';
       case J1FontWeight.normal:
-        return 'normal';
+        return r'normal';
       case J1FontWeight.medium:
-        return 'medium';
+        return r'medium';
       case J1FontWeight.semiBold:
-        return 'semiBold';
+        return r'semiBold';
       case J1FontWeight.bold:
-        return 'bold';
+        return r'bold';
       case J1FontWeight.extraBold:
-        return 'extraBold';
+        return r'extraBold';
       case J1FontWeight.black:
-        return 'black';
+        return r'black';
     }
   }
 }
@@ -148,7 +148,7 @@ mixin J1TextStyleMappable {
   }
 
   J1TextStyleCopyWith<J1TextStyle, J1TextStyle, J1TextStyle> get copyWith =>
-      _J1TextStyleCopyWithImpl(this as J1TextStyle, $identity, $identity);
+      _J1TextStyleCopyWithImpl<J1TextStyle, J1TextStyle>(this as J1TextStyle, $identity, $identity);
   @override
   String toString() {
     return J1TextStyleMapper.ensureInitialized().stringifyValue(this as J1TextStyle);
@@ -167,7 +167,7 @@ mixin J1TextStyleMappable {
 
 extension J1TextStyleValueCopy<$R, $Out> on ObjectCopyWith<$R, J1TextStyle, $Out> {
   J1TextStyleCopyWith<$R, J1TextStyle, $Out> get $asJ1TextStyle =>
-      $base.as((v, t, t2) => _J1TextStyleCopyWithImpl(v, t, t2));
+      $base.as((v, t, t2) => _J1TextStyleCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
 abstract class J1TextStyleCopyWith<$R, $In extends J1TextStyle, $Out> implements ClassCopyWith<$R, $In, $Out> {
@@ -200,7 +200,7 @@ class _J1TextStyleCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, J1TextSty
 
   @override
   J1TextStyleCopyWith<$R2, J1TextStyle, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _J1TextStyleCopyWithImpl($value, $cast, t);
+      _J1TextStyleCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
 
 class J1TextThemeMapper extends ClassMapperBase<J1TextTheme> {
@@ -310,7 +310,7 @@ mixin J1TextThemeMappable {
   }
 
   J1TextThemeCopyWith<J1TextTheme, J1TextTheme, J1TextTheme> get copyWith =>
-      _J1TextThemeCopyWithImpl(this as J1TextTheme, $identity, $identity);
+      _J1TextThemeCopyWithImpl<J1TextTheme, J1TextTheme>(this as J1TextTheme, $identity, $identity);
   @override
   String toString() {
     return J1TextThemeMapper.ensureInitialized().stringifyValue(this as J1TextTheme);
@@ -329,7 +329,7 @@ mixin J1TextThemeMappable {
 
 extension J1TextThemeValueCopy<$R, $Out> on ObjectCopyWith<$R, J1TextTheme, $Out> {
   J1TextThemeCopyWith<$R, J1TextTheme, $Out> get $asJ1TextTheme =>
-      $base.as((v, t, t2) => _J1TextThemeCopyWithImpl(v, t, t2));
+      $base.as((v, t, t2) => _J1TextThemeCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
 abstract class J1TextThemeCopyWith<$R, $In extends J1TextTheme, $Out> implements ClassCopyWith<$R, $In, $Out> {
@@ -476,5 +476,5 @@ class _J1TextThemeCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, J1TextThe
 
   @override
   J1TextThemeCopyWith<$R2, J1TextTheme, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _J1TextThemeCopyWithImpl($value, $cast, t);
+      _J1TextThemeCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }
