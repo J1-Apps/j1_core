@@ -9,7 +9,7 @@ class _TestEnvironment extends J1Environment {
   J1Logger get logger => LocalLogger();
 
   @override
-  J1Router get router => GoRouter();
+  J1Router get router => J1RouterGo();
 }
 
 void main() {
@@ -18,7 +18,7 @@ void main() {
       _TestEnvironment().configure();
 
       expect(locator.get<J1Logger>() is LocalLogger, true);
-      expect(locator.get<J1Router>() is GoRouter, true);
+      expect(locator.get<J1Router>() is J1RouterGo, true);
     });
   });
 }

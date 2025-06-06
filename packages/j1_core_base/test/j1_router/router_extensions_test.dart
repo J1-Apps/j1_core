@@ -18,11 +18,13 @@ final _locator = GetIt.instance;
 
 void main() {
   final router = MockRouter();
+  final RouteConfig config = EmptyRouteConfig();
 
   setUpAll(() {
     _locator.registerSingleton<J1Router>(router);
     registerFallbackValue(MockBuildContext());
     registerFallbackValue(_homeRoute);
+    registerFallbackValue(config);
   });
 
   setUp(() {
@@ -31,7 +33,9 @@ void main() {
 
   group("Router Extensions", () {
     testWidgets("calls navigate, pop, and canPop", (tester) async {
-      when(() => router.navigate(any(), any())).thenAnswer((_) => Future.value("test"));
+      when(() => router.navigate<EmptyRouteConfig>(any(), any(), any())).thenAnswer((_) => Future.value("test"));
+      when(() => router.push<EmptyRouteConfig>(any(), any(), any())).thenAnswer((_) => Future.value("test"));
+      when(() => router.pushReplacement<EmptyRouteConfig>(any(), any(), any())).thenAnswer((_) => Future.value("test"));
       when(() => router.pop(any())).thenReturn(null);
       when(() => router.canPop(any())).thenReturn(true);
 
@@ -42,8 +46,16 @@ void main() {
               return Column(
                 children: [
                   IconButton(
-                    onPressed: () => context.navigate(_homeRoute.build(const EmptyRouteConfig())),
+                    onPressed: () => context.navigate(_homeRoute, const EmptyRouteConfig()),
                     icon: const Icon(Icons.arrow_back),
+                  ),
+                  IconButton(
+                    onPressed: () => context.push(_homeRoute, const EmptyRouteConfig()),
+                    icon: const Icon(Icons.push_pin),
+                  ),
+                  IconButton(
+                    onPressed: () => context.pushReplacement(_homeRoute, const EmptyRouteConfig()),
+                    icon: const Icon(Icons.push_pin_outlined),
                   ),
                   IconButton(onPressed: () => context.pop(), icon: const Icon(Icons.arrow_forward)),
                   IconButton(onPressed: () => context.canPop(), icon: const Icon(Icons.arrow_upward)),
@@ -57,8 +69,12 @@ void main() {
       await tester.tap(find.byIcon(Icons.arrow_back));
       await tester.tap(find.byIcon(Icons.arrow_forward));
       await tester.tap(find.byIcon(Icons.arrow_upward));
+      await tester.tap(find.byIcon(Icons.push_pin));
+      await tester.tap(find.byIcon(Icons.push_pin_outlined));
 
-      verify(() => router.navigate(any(), any())).called(1);
+      verify(() => router.navigate<EmptyRouteConfig>(any(), any(), any())).called(1);
+      verify(() => router.push<EmptyRouteConfig>(any(), any(), any())).called(1);
+      verify(() => router.pushReplacement<EmptyRouteConfig>(any(), any(), any())).called(1);
       verify(() => router.pop(any())).called(1);
       verify(() => router.canPop(any())).called(1);
     });
