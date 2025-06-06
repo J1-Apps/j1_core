@@ -5,7 +5,7 @@ import "package:j1_core_base/j1_core_base.dart";
 
 import "../j1_route_test.dart";
 
-final _testRouteGraph = GoRouteGraph(
+final _testRouteGraph = J1RouteGraphGo(
   routes: [
     J1ShellNode(
       builder: (context, child) => child,
@@ -18,22 +18,35 @@ final _testRouteGraph = GoRouteGraph(
                 children: [
                   IconButton(
                     onPressed: () => context.navigate(
-                      testRoute.build(
-                        const TestRouteConfig(path0: "test", path1: true, query0: "testQuery", query1: 42),
-                      ),
+                      testRoute,
+                      const TestRouteConfig(path0: "test", path1: true, query0: "testQuery", query1: 42),
                     ),
                     icon: const Icon(Icons.arrow_forward),
                   ),
                   IconButton(
-                    onPressed: () => context.navigate(redirectRoute.build(const EmptyRouteConfig())),
+                    onPressed: () => context.push(
+                      testRoute,
+                      const TestRouteConfig(path0: "test", path1: true, query0: "testQuery", query1: 42),
+                    ),
+                    icon: const Icon(Icons.push_pin),
+                  ),
+                  IconButton(
+                    onPressed: () => context.pushReplacement(
+                      testRoute,
+                      const TestRouteConfig(path0: "test", path1: true, query0: "testQuery", query1: 42),
+                    ),
+                    icon: const Icon(Icons.push_pin_outlined),
+                  ),
+                  IconButton(
+                    onPressed: () => context.navigate(redirectRoute, const EmptyRouteConfig()),
                     icon: const Icon(Icons.arrow_upward),
                   ),
                   IconButton(
-                    onPressed: () => context.navigate(redirectShellRoute.build(const EmptyRouteConfig())),
+                    onPressed: () => context.navigate(redirectShellRoute, const EmptyRouteConfig()),
                     icon: const Icon(Icons.shield),
                   ),
                   IconButton(
-                    onPressed: () => context.navigate("/invalid"),
+                    onPressed: () => context.navigate(invalidRoute, const EmptyRouteConfig()),
                     icon: const Icon(Icons.error),
                   ),
                 ],
@@ -51,7 +64,7 @@ final _testRouteGraph = GoRouteGraph(
                       icon: Icon(context.canPop() ? Icons.arrow_back : Icons.arrow_forward),
                     ),
                     IconButton(
-                      onPressed: () => context.navigate(homeRoute.build(const EmptyRouteConfig())),
+                      onPressed: () => context.navigate(homeRoute, const EmptyRouteConfig()),
                       icon: const Icon(Icons.arrow_downward),
                     ),
                     Text("path0: ${testConfig.path0}"),
@@ -67,7 +80,7 @@ final _testRouteGraph = GoRouteGraph(
               builder: (context, config) {
                 return Center(
                   child: IconButton(
-                    onPressed: () => context.navigate(homeRoute.build(const EmptyRouteConfig())),
+                    onPressed: () => context.navigate(homeRoute, const EmptyRouteConfig()),
                     icon: const Icon(Icons.arrow_back),
                   ),
                 );
@@ -94,18 +107,21 @@ final _testRouteGraph = GoRouteGraph(
 
 void main() {
   setUpAll(() {
-    GetIt.instance.registerSingleton<J1Router>(GoRouter());
+    GetIt.instance.registerSingleton<J1Router>(J1RouterGo());
   });
 
-  group("Go Router", () {
+  group("J1 Router Go", () {
     testWidgets("navigates to a route, pops off a route, and handles canPop", (tester) async {
       await tester.pumpWidget(
         MaterialApp.router(routerConfig: _testRouteGraph.buildConfig()),
       );
 
       final homeNavFinder = find.byIcon(Icons.arrow_forward);
+      final homeNavFinder1 = find.byIcon(Icons.push_pin);
+      final homeNavFinder2 = find.byIcon(Icons.push_pin_outlined);
       final testNavFinder0 = find.byIcon(Icons.arrow_back);
       final testNavFinder1 = find.byIcon(Icons.arrow_downward);
+      final testNavFinder2 = find.byIcon(Icons.arrow_forward);
 
       expect(homeNavFinder, findsOneWidget);
       expect(testNavFinder0, findsNothing);
@@ -126,6 +142,25 @@ void main() {
 
       expect(homeNavFinder, findsOneWidget);
       expect(testNavFinder0, findsNothing);
+
+      await tester.tap(homeNavFinder1);
+      await tester.pumpAndSettle();
+
+      expect(homeNavFinder, findsNothing);
+      expect(testNavFinder0, findsOneWidget);
+
+      await tester.tap(testNavFinder0);
+      await tester.pumpAndSettle();
+
+      await tester.tap(homeNavFinder2);
+      await tester.pumpAndSettle();
+
+      expect(homeNavFinder, findsNothing);
+      expect(testNavFinder0, findsNothing);
+      expect(testNavFinder2, findsOneWidget);
+
+      await tester.tap(testNavFinder1);
+      await tester.pumpAndSettle();
 
       await tester.tap(homeNavFinder);
       await tester.pumpAndSettle();

@@ -59,6 +59,11 @@ const homeRoute = J1Route<EmptyRouteConfig>(
   configParser: EmptyRouteConfig.parser,
 );
 
+const invalidRoute = J1Route<EmptyRouteConfig>(
+  parts: [PathSegment("/invalid")],
+  configParser: EmptyRouteConfig.parser,
+);
+
 void main() {
   group("J1 Route", () {
     test("builds a home route", () {

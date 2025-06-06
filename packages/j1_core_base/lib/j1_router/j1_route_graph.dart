@@ -17,7 +17,7 @@ typedef Redirect = String? Function(BuildContext);
 /// use a pre-built implementation.
 ///
 /// Implementations:
-/// - [GoRouter].
+/// - [J1RouterGo].
 abstract class J1RouteGraph {
   final List<J1RouteGraphNode> routes;
   final String? initialPath;

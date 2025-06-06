@@ -2,8 +2,8 @@ import "package:flutter/material.dart";
 import "package:go_router/go_router.dart" as go;
 import "package:j1_core_base/j1_core_base.dart";
 
-class GoRouteGraph extends J1RouteGraph {
-  const GoRouteGraph({
+class J1RouteGraphGo extends J1RouteGraph {
+  const J1RouteGraphGo({
     required super.routes,
     super.initialPath,
     super.navigatorKey,
