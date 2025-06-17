@@ -30,4 +30,5 @@ flutter:
   fonts:
     - family: JamIcons
       fonts:
-        - asset: packages/j1_ui/fonts/JamIcons.ttf
+        - asset: packages/j1_core_base/j1_ui/fonts/JamIcons.ttf
+
