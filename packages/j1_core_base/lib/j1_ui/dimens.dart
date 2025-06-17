@@ -9,7 +9,7 @@ class JDimens {
   static const double size_10 = 10;
   static const double size_12 = 12;
   static const double size_14 = 14;
-  static const double size_16 = 18;
+  static const double size_16 = 16;
   static const double size_20 = 20;
   static const double size_24 = 24;
   static const double size_32 = 32;
