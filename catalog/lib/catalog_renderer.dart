@@ -13,7 +13,7 @@ class CatalogRenderer extends StatelessWidget {
     final backButton = isRoot
         ? null
         : JIconButton(
-            icon: JamIcons.chevronleft,
+            icon: JamIcons.chevron_left,
             onPressed: () => Navigator.of(context).maybePop(),
           );
 
@@ -45,7 +45,7 @@ class CatalogRenderer extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: JDimens.spacing_m, vertical: JDimens.spacing_s),
         children: [
           Text(node.title, style: Theme.of(context).textTheme.headlineSmall),
-          if (node is CatalogBranch) const Icon(JamIcons.chevronright),
+          if (node is CatalogBranch) const Icon(JamIcons.chevron_right),
         ],
         onPressed: () => _navigateToNode(context, node),
       ),
