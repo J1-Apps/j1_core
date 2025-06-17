@@ -4,6 +4,7 @@ import "package:j1_core_base/j1_core_base.dart";
 
 class JBottomSheetOverrides extends Equatable {
   final double? cornerRadius;
+  final double? cornerRadiusBottom;
   final double? elevation;
 
   final Color? barrierColor;
@@ -13,6 +14,7 @@ class JBottomSheetOverrides extends Equatable {
 
   const JBottomSheetOverrides({
     this.cornerRadius,
+    this.cornerRadiusBottom,
     this.elevation,
     this.barrierColor,
     this.backgroundColor,
@@ -21,7 +23,15 @@ class JBottomSheetOverrides extends Equatable {
   });
 
   @override
-  List<Object?> get props => [cornerRadius, elevation, barrierColor, backgroundColor, outlineColor, outlineWidth];
+  List<Object?> get props => [
+    cornerRadius,
+    cornerRadiusBottom,
+    elevation,
+    barrierColor,
+    backgroundColor,
+    outlineColor,
+    outlineWidth,
+  ];
 }
 
 extension JBottomSheetExtension on BuildContext {
@@ -42,12 +52,13 @@ extension JBottomSheetExtension on BuildContext {
     final colors = colorScheme();
 
     final cornerRadius = Radius.circular(overrides?.cornerRadius ?? JDimens.radius_m);
+    final cornerRadiusBottom = Radius.circular(overrides?.cornerRadiusBottom ?? JDimens.radius_s);
     final shape = RoundedRectangleBorder(
       side: BorderSide(
         color: overrides?.outlineColor ?? colors.onSurface,
         width: overrides?.outlineWidth ?? J1Config.strokeWidth,
       ),
-      borderRadius: BorderRadius.only(topLeft: cornerRadius, topRight: cornerRadius),
+      borderRadius: BorderRadius.vertical(top: cornerRadius, bottom: cornerRadiusBottom),
     );
 
     return showModalBottomSheet<bool>(
