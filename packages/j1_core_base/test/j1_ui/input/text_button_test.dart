@@ -21,7 +21,7 @@ void main() {
               JTextButton(
                 key: smallKey,
                 text: "test",
-                icon: JamIcons.h1,
+                icon: JamIcons.header_1,
                 type: JButtonType.flat,
                 size: JWidgetSize.small,
                 onPressed: onPressed.call,
@@ -29,7 +29,7 @@ void main() {
               JTextButton(
                 key: mediumKey,
                 text: "test",
-                icon: JamIcons.h2,
+                icon: JamIcons.header_2,
                 type: JButtonType.flat,
                 color: JWidgetColor.secondary,
                 onPressed: onPressed.call,
@@ -38,7 +38,7 @@ void main() {
               JTextButton(
                 key: largeKey,
                 text: "test",
-                icon: JamIcons.h3,
+                icon: JamIcons.header_3,
                 type: JButtonType.flat,
                 color: JWidgetColor.tertiary,
                 size: JWidgetSize.large,
@@ -65,9 +65,9 @@ void main() {
       expect(mediumFinder, findsOneWidget);
       expect(largeFinder, findsOneWidget);
 
-      expect(find.byIcon(JamIcons.h1), findsOneWidget);
-      expect(find.byIcon(JamIcons.h2), findsOneWidget);
-      expect(find.byIcon(JamIcons.h3), findsOneWidget);
+      expect(find.byIcon(JamIcons.header_1), findsOneWidget);
+      expect(find.byIcon(JamIcons.header_2), findsOneWidget);
+      expect(find.byIcon(JamIcons.header_3), findsOneWidget);
 
       await tester.tap(smallFinder);
       await tester.tap(mediumFinder);
@@ -89,14 +89,14 @@ void main() {
               JTextButton(
                 key: smallKey,
                 text: "test",
-                icon: JamIcons.h1,
+                icon: JamIcons.header_1,
                 size: JWidgetSize.small,
                 onPressed: onPressed.call,
               ),
               JTextButton(
                 key: mediumKey,
                 text: "test",
-                icon: JamIcons.h2,
+                icon: JamIcons.header_2,
                 color: JWidgetColor.secondary,
                 onPressed: onPressed.call,
                 overrides: const JTextButtonOverrides(outlineColor: Colors.red, outlineWidth: 1),
@@ -104,7 +104,7 @@ void main() {
               JTextButton(
                 key: largeKey,
                 text: "test",
-                icon: JamIcons.h3,
+                icon: JamIcons.header_3,
                 color: JWidgetColor.tertiary,
                 size: JWidgetSize.large,
                 onPressed: onPressed.call,
@@ -125,9 +125,9 @@ void main() {
       expect(mediumFinder, findsOneWidget);
       expect(largeFinder, findsOneWidget);
 
-      expect(find.byIcon(JamIcons.h1), findsOneWidget);
-      expect(find.byIcon(JamIcons.h2), findsOneWidget);
-      expect(find.byIcon(JamIcons.h3), findsOneWidget);
+      expect(find.byIcon(JamIcons.header_1), findsOneWidget);
+      expect(find.byIcon(JamIcons.header_2), findsOneWidget);
+      expect(find.byIcon(JamIcons.header_3), findsOneWidget);
 
       await tester.tap(smallFinder);
       await tester.tap(mediumFinder);

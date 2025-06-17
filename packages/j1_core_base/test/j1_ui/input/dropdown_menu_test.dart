@@ -27,8 +27,8 @@ void main() {
         ),
       );
 
-      final expand = find.byIcon(JamIcons.chevrondown);
-      final collapse = find.byIcon(JamIcons.chevronup);
+      final expand = find.byIcon(JamIcons.chevron_down);
+      final collapse = find.byIcon(JamIcons.chevron_up);
       final option = find.text("Two");
 
       expect(expand, findsNWidgets(2));
@@ -65,8 +65,8 @@ void main() {
         ),
       );
 
-      final expand = find.byIcon(JamIcons.chevrondown);
-      final collapse = find.byIcon(JamIcons.chevronup);
+      final expand = find.byIcon(JamIcons.chevron_down);
+      final collapse = find.byIcon(JamIcons.chevron_up);
       final option = find.text("Two");
 
       expect(expand, findsNWidgets(2));
@@ -103,8 +103,8 @@ void main() {
         ),
       );
 
-      final expand = find.byIcon(JamIcons.chevrondown);
-      final collapse = find.byIcon(JamIcons.chevronup);
+      final expand = find.byIcon(JamIcons.chevron_down);
+      final collapse = find.byIcon(JamIcons.chevron_up);
       final option = find.text("Two");
 
       expect(expand, findsNWidgets(2));
@@ -141,7 +141,7 @@ void main() {
         ),
       );
 
-      final expand = find.byIcon(JamIcons.chevrondown);
+      final expand = find.byIcon(JamIcons.chevron_down);
       final field = find.byType(TextField);
 
       await tester.tap(expand.first);
@@ -172,7 +172,7 @@ void main() {
         ),
       );
 
-      final expand = find.byIcon(JamIcons.chevrondown);
+      final expand = find.byIcon(JamIcons.chevron_down);
       final field = find.byType(TextField);
 
       await tester.tap(expand.first);
