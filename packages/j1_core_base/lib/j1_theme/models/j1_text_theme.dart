@@ -160,7 +160,7 @@ class J1TextTheme with J1TextThemeMappable {
     required this.labelSmall,
   });
 
-  J1TextTheme copyWithHeaderFont(String fontFamily) {
+  J1TextTheme copyWithHeaderFont(String fontFamily, {bool includeTitle = true}) {
     return copyWith(
       displayLarge: displayLarge.copyWith(fontFamily: fontFamily),
       displayMedium: displayMedium.copyWith(fontFamily: fontFamily),
@@ -168,13 +168,13 @@ class J1TextTheme with J1TextThemeMappable {
       headlineLarge: headlineLarge.copyWith(fontFamily: fontFamily),
       headlineMedium: headlineMedium.copyWith(fontFamily: fontFamily),
       headlineSmall: headlineSmall.copyWith(fontFamily: fontFamily),
-      titleLarge: titleLarge.copyWith(fontFamily: fontFamily),
-      titleMedium: titleMedium.copyWith(fontFamily: fontFamily),
-      titleSmall: titleSmall.copyWith(fontFamily: fontFamily),
+      titleLarge: includeTitle ? titleLarge.copyWith(fontFamily: fontFamily) : titleLarge,
+      titleMedium: includeTitle ? titleMedium.copyWith(fontFamily: fontFamily) : titleMedium,
+      titleSmall: includeTitle ? titleSmall.copyWith(fontFamily: fontFamily) : titleSmall,
     );
   }
 
-  J1TextTheme copyWithBodyFont(String fontFamily) {
+  J1TextTheme copyWithBodyFont(String fontFamily, {bool includeTitle = false}) {
     return copyWith(
       bodyLarge: bodyLarge.copyWith(fontFamily: fontFamily),
       bodyMedium: bodyMedium.copyWith(fontFamily: fontFamily),
@@ -182,6 +182,9 @@ class J1TextTheme with J1TextThemeMappable {
       labelLarge: labelLarge.copyWith(fontFamily: fontFamily),
       labelMedium: labelMedium.copyWith(fontFamily: fontFamily),
       labelSmall: labelSmall.copyWith(fontFamily: fontFamily),
+      titleLarge: includeTitle ? titleLarge.copyWith(fontFamily: fontFamily) : titleLarge,
+      titleMedium: includeTitle ? titleMedium.copyWith(fontFamily: fontFamily) : titleMedium,
+      titleSmall: includeTitle ? titleSmall.copyWith(fontFamily: fontFamily) : titleSmall,
     );
   }
 }

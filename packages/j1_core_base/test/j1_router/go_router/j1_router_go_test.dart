@@ -61,7 +61,7 @@ final _testRouteGraph = J1RouteGraphGo(
                   children: [
                     IconButton(
                       onPressed: () => context.pop(),
-                      icon: Icon(context.canPop() ? Icons.arrow_back : Icons.arrow_forward),
+                      icon: const Icon(Icons.arrow_back),
                     ),
                     IconButton(
                       onPressed: () => context.navigate(homeRoute, const EmptyRouteConfig()),
@@ -71,6 +71,7 @@ final _testRouteGraph = J1RouteGraphGo(
                     Text("path1: ${testConfig.path1}"),
                     Text("query0: ${testConfig.query0}"),
                     Text("query1: ${testConfig.query1}"),
+                    Text("canPop: ${context.canPop()}"),
                   ],
                 );
               },
@@ -112,16 +113,19 @@ void main() {
 
   group("J1 Router Go", () {
     testWidgets("navigates to a route, pops off a route, and handles canPop", (tester) async {
-      await tester.pumpWidget(
-        MaterialApp.router(routerConfig: _testRouteGraph.buildConfig()),
-      );
+      tester.view.physicalSize = const Size(600, 1200);
+      tester.view.devicePixelRatio = 1.0;
+
+      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() => tester.view.resetDevicePixelRatio());
+
+      await tester.pumpWidget(MaterialApp.router(routerConfig: _testRouteGraph.buildConfig()));
 
       final homeNavFinder = find.byIcon(Icons.arrow_forward);
       final homeNavFinder1 = find.byIcon(Icons.push_pin);
       final homeNavFinder2 = find.byIcon(Icons.push_pin_outlined);
       final testNavFinder0 = find.byIcon(Icons.arrow_back);
       final testNavFinder1 = find.byIcon(Icons.arrow_downward);
-      final testNavFinder2 = find.byIcon(Icons.arrow_forward);
 
       expect(homeNavFinder, findsOneWidget);
       expect(testNavFinder0, findsNothing);
@@ -152,15 +156,20 @@ void main() {
       await tester.tap(testNavFinder0);
       await tester.pumpAndSettle();
 
+      expect(homeNavFinder, findsOneWidget);
+      expect(testNavFinder0, findsNothing);
+
       await tester.tap(homeNavFinder2);
       await tester.pumpAndSettle();
 
       expect(homeNavFinder, findsNothing);
-      expect(testNavFinder0, findsNothing);
-      expect(testNavFinder2, findsOneWidget);
+      expect(testNavFinder1, findsOneWidget);
 
       await tester.tap(testNavFinder1);
       await tester.pumpAndSettle();
+
+      expect(homeNavFinder, findsOneWidget);
+      expect(testNavFinder0, findsNothing);
 
       await tester.tap(homeNavFinder);
       await tester.pumpAndSettle();
