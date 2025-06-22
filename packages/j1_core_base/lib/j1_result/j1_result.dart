@@ -3,6 +3,7 @@ library;
 export "j1_result.dart";
 
 import "package:dart_mappable/dart_mappable.dart";
+import "package:flutter/foundation.dart";
 
 part "j1_result.mapper.dart";
 
@@ -55,4 +56,20 @@ class Failure<T extends Object, E extends Exception> extends J1Result<T, E> with
   final E error;
 
   const Failure(this.error);
+}
+
+@immutable
+final class None {
+  const None();
+
+  @override
+  String toString() => "None";
+
+  @override
+  bool operator ==(Object other) {
+    return other is None;
+  }
+
+  @override
+  int get hashCode => 0;
 }
