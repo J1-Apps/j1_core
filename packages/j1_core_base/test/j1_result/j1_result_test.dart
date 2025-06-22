@@ -46,5 +46,13 @@ void main() {
       final mappedSuccess = success.mapError((error) => Exception("exception"));
       expect(mappedSuccess, Success(1));
     });
+
+    test("none", () {
+      final none = None();
+      expect(none, isA<None>());
+      expect(none.toString(), "None");
+      expect(none == None(), isTrue);
+      expect(none.hashCode, 0);
+    });
   });
 }
